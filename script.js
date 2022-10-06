@@ -29,6 +29,11 @@ function signUp() {
     .catch(function (error) {
 
       let errorCode = error.code;
+      if (errorCode == "auth/weak-password") {alert("The password is too weak and the minimum size of password is 6 charecters");}
+      else if (errorCode == "auth/email-already-in-use") {alert("The email is already in use");email.value = "";password.value = "";}
+      else if (errorCode == "auth/invalid-email") {alert("The email is invalid");email.value = "";password.value = "";}
+      else if (errorCode == "auth/operation-not-allowed") {alert("The email is not allowed");email.value = "";password.value = "";}
+      else {alert("Please try again");email.value = "";password.value = "";};
 
     //Debug functions
     // console.log(error.Message);
