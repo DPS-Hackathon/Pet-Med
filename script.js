@@ -21,24 +21,29 @@ function signUp() {
   let password = document.getElementById("floatingPassword");
   let if_user_is_vet = document.getElementById("vetCheckBox");
 
-  auth.createUserWithEmailAndPassword(email.value, password.value).catch(function (error) {
+  auth.createUserWithEmailAndPassword(email.value, password.value)
+  .then( function (working){
+    alert("Account created successfully"); if (if_user_is_vet.checked == true){window.location="vetinfo.html"} else {window.location="vets.html";}
+    })
+  
+  .catch(function (error) {
 
     let errorCode = error.code;
 
-    // if (errorCode == "auth/weak-password") {alert("The password is too weak and the minimum size of password is 6 charecters");}
-    // else if (errorCode == "auth/email-already-in-use") {alert("The email is already in use");email.value = "";password.value = "";}
-    // else if (errorCode == "auth/invalid-email") {alert("The email is invalid");email.value = "";password.value = "";}
-    // else if (errorCode == "auth/operation-not-allowed") {alert("The email is not allowed");email.value = "";password.value = "";}
-    // else if (error.Message == "undefined") {alert("Successfully signed up");email.value = "";password.value = ""; if (if_user_is_vet.checked == true){window.location="vetinfo.html"} else {window.location="vets.html";}}
-    // else {alert("Please try again");email.value = "";password.value = "";}
+    if (errorCode == "auth/weak-password") {alert("The password is too weak and the minimum size of password is 6 charecters");}
+    else if (errorCode == "auth/email-already-in-use") {alert("The email is already in use");email.value = "";password.value = "";}
+    else if (errorCode == "auth/invalid-email") {alert("The email is invalid");email.value = "";password.value = "";}
+    else if (errorCode == "auth/operation-not-allowed") {alert("The email is not allowed");email.value = "";password.value = "";}
+    else {alert("Please try again");email.value = "";password.value = "";}
+    
 
     //Debug functions
     console.log(error.Message);
     alert(error.code)
-    email.value = "";
-    password.value = "";
-    // if (if_user_is_vet.checked == true){window.location="vetinfo.html";}// If checkbox is checked then redirect to vetinfo.html
-    // else {window.location="vets.html";}// If checkbox is not checked then redirect to vets.html
+    // email.value = "";
+    // password.value = "";
+    if (if_user_is_vet.checked == true){window.location="vetinfo.html";}// If checkbox is checked then redirect to vetinfo.html
+    else {window.location="vets.html";}// If checkbox is not checked then redirect to vets.html
   });
   // if (if_user_is_vet.checked == true){window.location="vetinfo.html";}// If checkbox is checked then redirect to vetinfo.html
   // else {window.location="vets.html";}// If checkbox is not checked then redirect to vets.html
