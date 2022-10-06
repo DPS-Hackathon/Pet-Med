@@ -38,12 +38,12 @@ function signUp() {
     
 
     //Debug functions
-    console.log(error.Message);
-    alert(error.code)
-    // email.value = "";
-    // password.value = "";
-    if (if_user_is_vet.checked == true){window.location="vetinfo.html";}// If checkbox is checked then redirect to vetinfo.html
-    else {window.location="vets.html";}// If checkbox is not checked then redirect to vets.html
+    // console.log(error.Message);
+    // alert(error.code)
+    // // email.value = "";
+    // // password.value = "";
+    // if (if_user_is_vet.checked == true){window.location="vetinfo.html";}// If checkbox is checked then redirect to vetinfo.html
+    // else {window.location="vets.html";}// If checkbox is not checked then redirect to vets.html
   });
   // if (if_user_is_vet.checked == true){window.location="vetinfo.html";}// If checkbox is checked then redirect to vetinfo.html
   // else {window.location="vets.html";}// If checkbox is not checked then redirect to vets.html
