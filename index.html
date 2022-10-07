@@ -74,6 +74,35 @@
             </div>
         </div>
 
+
+
+
+
+        <div class="chat-container upper-bg rounded-4" id="chat-container">
+            <div class="chat-header main-bg ">
+                <p class="title primary-text my-auto text-center"> Pet-Med Helper</p>
+                <a class="bi bi-x-octagon-fill ms-auto primary-text text-decoration-none"
+                    onclick="document.getElementById('chat-container').remove()"></a>
+
+            </div>
+            <div class=" chat-body">
+            </div>
+            <div class="chat-input">
+                <div class="input-sec">
+                    <input type="text" id="txtInput" placeholder="Type your question here!" autofocus />
+                </div>
+                <div class="send">
+                    <img src="images/send.svg" alt="send" />
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
         <div class="container">
             <div class="row align-items-center pb-5 upper-bg rounded-5 mb-4">
                 <div class=" col-12 col-xl-6 d-flex flex-column justify-content-center">
@@ -166,6 +195,8 @@
             </div>
         </footer>
 
+        <script src="chatbot.js"></script>
+        <script src="response.js"></script>
 
         <!-- Bootstrap Javascript -->
 
