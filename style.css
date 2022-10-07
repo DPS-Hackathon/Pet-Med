@@ -220,7 +220,7 @@ body {
     padding: 8px 10px;
     border: none;
     outline: none;
-    caret-color: black;
+    caret-color: white;
     font-size: 1rem;
     width: 100%;
 }
