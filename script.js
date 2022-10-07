@@ -55,9 +55,13 @@ function signIn() {
     let password = document.getElementById("floatingPassword");
     auth.signInWithEmailAndPassword(email.value, password.value).catch(function (error) {
 
-        // var errorCode = error.code;
-        console.log(error.Message);
-        alert("An error occured, please try again");
+        let errorCode = error.code;
+
+        if (errorCode == "auth/wrong-password") { alert("The password used for the email is incorrect"); email.value = ""; password.value = ""; }
+        else if (errorCode == "auth/invalid-email") { alert("The email is invalid"); email.value = ""; password.value = ""; }
+
+        // console.log(error.code);
+        // alert("An error occured, please try again");
         email.value = "";
         password.value = "";
     }
