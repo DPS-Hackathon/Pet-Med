@@ -13,6 +13,8 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 const auth = firebase.auth();
+const user = auth.currentUser();
+
 
 //signOut
 
@@ -21,4 +23,5 @@ function signOut() {
     alert("Signed out successfully");
     window.location = "signin.html"
 }
+
 
